@@ -1,6 +1,9 @@
 import { UiButton } from '@/shared/ui/ui-button/ui-button.tsx'
 import type { UiVariant } from '@/shared/models/ui-variant.model.ts'
 import type { UiSize } from '@/shared/models/ui-size.model.ts'
+import { useApplyTheme } from '@/shared/hooks/use-apply-theme.tsx'
+import { Theme } from '@/shared/models/theme-type.ts'
+import { useThemeStore } from '@/shared/store/theme-store/theme-store.ts'
 
 const variants: UiVariant[] = [
   'default',
@@ -23,8 +26,19 @@ const variants: UiVariant[] = [
 const sizes: UiSize[] = ['xs', 'sm', 'default', 'lg', 'xl', 'xxl', '3xl', '4xl', '5xl', '6xl']
 
 export function App() {
+  useApplyTheme()
+
+  const theme = useThemeStore(s => s.theme)
+  const toggleTheme = useThemeStore(s => s.toggleTheme)
+
   return (
     <div className="p-8 flex flex-col gap-10">
+      <div className="fixed top-4 right-4 z-50">
+        <UiButton variant="outline" size="sm" onClick={toggleTheme}>
+          {theme === Theme.Light ? 'Dark' : 'Light'}
+        </UiButton>
+      </div>
+
       <section>
         <h2 className="text-xl font-semibold mb-4">Variants</h2>
         <div className="flex flex-wrap gap-3 items-center">

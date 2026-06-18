@@ -1,5 +1,5 @@
 import { isEmpty } from '@/shared/utils/is-empty.util'
-import { LocalStoragePrefix } from '@/shared/constants/local-storage.constants'
+import { LocalStoragePrefix } from '@/shared/constants/local-storage-constants'
 
 type Listener<T> = (value: T | null) => void
 
