@@ -24,7 +24,18 @@ const variants: UiVariant[] = [
   'link',
 ]
 
-const sizes: UiSize[] = ['xs', 'sm', 'default', 'lg', 'xl', 'xxl', '3xl', '4xl', '5xl', '6xl']
+const sizes: UiSize[] = [
+  'xs',
+  'sm',
+  'default',
+  'lg',
+  'xl',
+  'xxl',
+  '3xl',
+  '4xl',
+  '5xl',
+  '6xl',
+]
 
 export function App() {
   useApplyTheme()
@@ -67,7 +78,9 @@ export function App() {
         <div className="flex flex-col gap-4">
           {variants.map(variant => (
             <div key={variant} className="flex flex-wrap gap-3 items-center">
-              <span className="w-32 text-sm text-muted-foreground">{variant}</span>
+              <span className="w-32 text-sm text-muted-foreground">
+                {variant}
+              </span>
               {sizes.slice(0, 5).map(size => (
                 <UiButton key={size} variant={variant} size={size}>
                   {size}

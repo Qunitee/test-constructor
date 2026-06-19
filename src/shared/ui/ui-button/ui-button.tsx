@@ -13,7 +13,12 @@ function UiButton({
   ...props
 }: UiButtonProps) {
   const Comp = asChild ? Slot.Root : 'button'
-  const classes = cn('button', `button--${variant}`, `button--size-${size}`, className)
+  const classes = cn(
+    'button',
+    `button--${variant}`,
+    `button--size-${size}`,
+    className
+  )
   return (
     <Comp
       data-slot="button"
