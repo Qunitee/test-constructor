@@ -4,6 +4,7 @@ import type { UiSize } from '@/shared/models/ui-size.model.ts'
 import { useApplyTheme } from '@/shared/hooks/use-apply-theme.tsx'
 import { Theme } from '@/shared/models/theme-type.ts'
 import { useThemeStore } from '@/shared/store/theme-store/theme-store.ts'
+import { UiInput } from '@/shared/ui/ui-input/input.tsx'
 
 const variants: UiVariant[] = [
   'default',
@@ -87,6 +88,36 @@ export function App() {
           <UiButton variant="primary" isRoundedFull>
             Rounded full
           </UiButton>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold mb-4">Input sizes</h2>
+        <div className="flex flex-col gap-3 max-w-sm">
+          {sizes.map(size => (
+            <UiInput key={size} size={size} placeholder={`size: ${size}`} />
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold mb-4">Input states</h2>
+        <div className="flex flex-col gap-3 max-w-sm">
+          <UiInput placeholder="Normal" />
+          <UiInput placeholder="Disabled" disabled />
+          <UiInput placeholder="Invalid" aria-invalid />
+          <UiInput placeholder="With value" defaultValue="Hello world" />
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold mb-4">Input types</h2>
+        <div className="flex flex-col gap-3 max-w-sm">
+          <UiInput type="text" placeholder="Text" />
+          <UiInput type="email" placeholder="email@example.com" />
+          <UiInput type="password" placeholder="Password" />
+          <UiInput type="number" placeholder="Number" />
+          <UiInput type="search" placeholder="Search..." />
         </div>
       </section>
     </div>
