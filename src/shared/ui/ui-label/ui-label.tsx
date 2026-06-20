@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Label as LabelPrimitive } from 'radix-ui'
+import './styles/ui-label.scss'
 
 import { cn } from '@/shared/utils/utils.ts'
 function UiLabel({
@@ -9,10 +10,7 @@ function UiLabel({
   return (
     <LabelPrimitive.Root
       data-slot="label"
-      className={cn(
-        'flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50',
-        className
-      )}
+      className={cn('label', className)}
       {...props}
     />
   )
