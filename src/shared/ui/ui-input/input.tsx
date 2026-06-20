@@ -5,16 +5,20 @@ import './styles/ui-input.scss'
 function UiInput({
   className,
   size = 'default',
-  type,
+  type = 'text',
+  value,
+  onChange,
   ...props
 }: UiInputProps) {
   return (
     <input
+      {...props}
       data-slot="input"
       data-size={size}
       type={type}
+      value={value ?? ''}
+      onChange={e => onChange?.(e.target.value)}
       className={cn('input', className)}
-      {...props}
     />
   )
 }

@@ -7,6 +7,7 @@ import { useThemeStore } from '@/shared/store/theme-store/theme-store.ts'
 import { UiInput } from '@/shared/ui/ui-input/input.tsx'
 import { UiBadge } from '@/shared/ui/ui-badge/ui-badge.tsx'
 import { UiIcon } from '@/shared/ui/ui-icon/ui-icon.tsx'
+import { DemoForm } from '@/shared/test-forf/test-form.tsx'
 
 const variants: UiVariant[] = [
   'default',
@@ -52,7 +53,6 @@ export function App() {
           {theme === Theme.Light ? 'Dark' : 'Light'}
         </UiButton>
       </div>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">Variants</h2>
         <div className="flex flex-wrap gap-3 items-center">
@@ -63,7 +63,6 @@ export function App() {
           ))}
         </div>
       </section>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">Sizes</h2>
         <div className="flex flex-wrap gap-3 items-center">
@@ -74,7 +73,6 @@ export function App() {
           ))}
         </div>
       </section>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">Matrix</h2>
         <div className="flex flex-col gap-4">
@@ -92,7 +90,6 @@ export function App() {
           ))}
         </div>
       </section>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">States</h2>
         <div className="flex flex-wrap gap-3 items-center">
@@ -105,7 +102,6 @@ export function App() {
           </UiButton>
         </div>
       </section>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">Input sizes</h2>
         <div className="flex flex-col gap-3 max-w-sm">
@@ -114,7 +110,6 @@ export function App() {
           ))}
         </div>
       </section>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">Input states</h2>
         <div className="flex flex-col gap-3 max-w-sm">
@@ -124,7 +119,6 @@ export function App() {
           <UiInput placeholder="With value" defaultValue="Hello world" />
         </div>
       </section>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">Input types</h2>
         <div className="flex flex-col gap-3 max-w-sm">
@@ -135,7 +129,6 @@ export function App() {
           <UiInput type="search" placeholder="Search..." />
         </div>
       </section>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">Badge variants</h2>
         <div className="flex flex-wrap gap-3 items-center">
@@ -146,7 +139,6 @@ export function App() {
           ))}
         </div>
       </section>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">Badge with icons</h2>
         <div className="flex flex-wrap gap-3 items-center">
@@ -177,7 +169,6 @@ export function App() {
           </UiBadge>
         </div>
       </section>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">Badge sizes</h2>
         <div className="flex flex-wrap gap-3 items-center">
@@ -189,7 +180,6 @@ export function App() {
           ))}
         </div>
       </section>
-
       <section>
         <h2 className="text-xl font-semibold mb-4">Real use cases</h2>
         <div className="flex flex-wrap gap-3 items-center">
@@ -210,6 +200,10 @@ export function App() {
             Flagged
           </UiBadge>
         </div>
+        <section>
+          <h2 className="text-xl font-semibold mb-4">Controlled form</h2>
+          <DemoForm />
+        </section>
       </section>
     </div>
   )

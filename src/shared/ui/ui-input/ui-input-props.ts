@@ -3,6 +3,10 @@ import type { DefaultComponentProps } from '@/shared/models/default-components-p
 import type { UiSize } from '@/shared/models/ui-size.model.ts'
 
 export interface UiInputProps
-  extends Omit<React.ComponentProps<'input'>, 'size'>, DefaultComponentProps {
+  extends
+    Omit<React.ComponentProps<'input'>, 'size' | 'onChange'>,
+    DefaultComponentProps {
   size?: UiSize
+  value: string
+  onChange?: (value: string) => void
 }
