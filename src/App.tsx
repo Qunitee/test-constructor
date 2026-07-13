@@ -8,6 +8,7 @@ import { UiInput } from '@/shared/ui/ui-input/input.tsx'
 import { UiBadge } from '@/shared/ui/ui-badge/ui-badge.tsx'
 import { UiIcon } from '@/shared/ui/ui-icon/ui-icon.tsx'
 import { DemoForm } from '@/shared/test-forf/test-form.tsx'
+import { LoginForm } from '@/entities/login-form/login-form.tsx'
 
 const variants: UiVariant[] = [
   'default',
@@ -202,7 +203,7 @@ export function App() {
         </div>
         <section>
           <h2 className="text-xl font-semibold mb-4">Controlled form</h2>
-          <DemoForm />
+          <LoginForm />
         </section>
       </section>
     </div>
